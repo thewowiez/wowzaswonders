@@ -1,5 +1,6 @@
 local carvanha = {
   name = "carvanha",
+  poke_custom_prefix = "wowzas",
   pos = {x = 6, y = 6},
   config = { extra = {mult = 0, mult_mod = 7, eaten = 0}, evo_rqmt = 21},
   rarity = 1,
@@ -43,6 +44,7 @@ local carvanha = {
 -- Sharpedo 319
 local sharpedo = {
   name = "sharpedo",
+  poke_custom_prefix = "wowzas",
   pos = {x = 7, y = 6},
   config = { extra = {mult = 0, mult_mod = 10, eaten = 0}},
   rarity = "poke_safari",
@@ -87,6 +89,7 @@ local sharpedo = {
 -- Mega Sharpedo 319-1
 local mega_sharpedo = {
   name = "mega_sharpedo",
+  poke_custom_prefix = "wowzas",
   pos = {x = 4, y = 4},
   soul_pos = {x = 5, y = 4},
   config = { extra = {mult = 0, mult_mod = 10, Xmult = 1, Xmult_mod = 0.15, eaten = 0}},
@@ -132,6 +135,7 @@ local mega_sharpedo = {
 -- Cottonee 546
 local cottonee = {
   name = "cottonee",
+  poke_custom_prefix = "wowzas",
   pos = { x = 10, y = 3},
   config = {extra = {money = 0, money_mod = 0.5, mult = 3}},
   loc_vars = function(self, info_queue, card)
@@ -170,6 +174,7 @@ local cottonee = {
 -- Whimsicott 547
 local whimsicott = {
   name = "whimsicott",
+  poke_custom_prefix = "wowzas",
   pos = { x = 11, y = 3 },
   config = {extra = {money = 0.75, mult = 3}},
   loc_vars = function(self, info_queue, card)
@@ -202,6 +207,7 @@ local whimsicott = {
 -- Noibat 714
 local noibat = {
   name = "noibat",
+  poke_custom_prefix = "wowzas",
   pos = {x = 8, y = 4},
   config = {extra = {retriggers = 1, chips = 10, rounds = 6}},
   loc_vars = function(self, info_queue, center)
@@ -238,6 +244,7 @@ local noibat = {
 -- Noivern 715
 local noivern = {
   name = "noivern",
+  poke_custom_prefix = "wowzas",
   pos = {x = 9, y = 4},
   config={extra = {retriggers1 = 2, retriggers2 = 1, chips1 = 20, chips2 = 40}},
   loc_vars = function(self, info_queue, center)
