@@ -36,7 +36,7 @@ return {
             j_wowzas_cottonee = {
                 name = "Cottonee",
                 text = {
-                    "Each card scored gives {C:money}$0.3{}",
+                    "Each card scored gives {C:money}+#$2#{}",
                     "When blind is selected",
                     "sets money to {C:money}$0",
                     "{C:inactive,s:0.8}(Evolves with a {C:attention,s:0.8}Sun Stone{C:inactive,s:0.8})",
@@ -46,7 +46,7 @@ return {
             j_wowzas_whimsicott = {
                 name = "Whimsicott",
                 text = {
-                    "Each card scored give {C:money}$0.75{}",
+                    "Each card scored give {C:money}+#$1#{}",
                     "Each joker gives {C:mult}+#2#{} Mult",
                 }
             },
