@@ -38,7 +38,7 @@ local carvanha = {
       local eat = context.destroying_card:get_id() == 14 and context.destroying_card:is_suit("Spades")
       return not context.blueprint and eat and context.destroying_card.carvanha_target
     end
-    return scaling_evo(self, card, context, "j_poke_sharpedo", card.ability.extra.mult, self.config.evo_rqmt)
+    return scaling_evo(self, card, context, "j_wowzas_sharpedo", card.ability.extra.mult, self.config.evo_rqmt)
   end
 }
 -- Sharpedo 319
