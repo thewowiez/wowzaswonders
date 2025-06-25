@@ -70,6 +70,28 @@ return {
                 }
             },
 
+            j_wowzas_cetoddle = {
+                name = 'Cetoddle',
+                text = {
+                    "{C:attention}+#1#{} hand size",
+                    "The leftmost card held in hand of",
+                    "{C:attention}first hand{} of round",
+                    "becomes a {C:attention}Glass{} card",
+                    "{C:inactive,s:0.8}(Evolves with a {C:attention,s:0.8}Ice Stone{C:inactive,s:0.8})",
+                }
+            },
+
+            j_wowzas_cetitan = {
+                name = 'Cetitan',
+                text = {
+                    "{C:attention}+#1#{} hand size",
+                    "{C:attention}Glass{} cards held in hand give {C:chips}+#2#{} Chips",
+                    "Unenhanced cards held in hand have a",
+                    "chance to become {C:attention}Glass{} based on hand size",
+                    "{C:inactive,s:0.8}(Larger hand size means lower odds){C:inactive,s:0.8}"
+                }
+            },
+
             
 
 
