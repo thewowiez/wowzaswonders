@@ -289,7 +289,114 @@ local noivern = {
   end
 }
 
-list = {carvanha, sharpedo, mega_sharpedo, cottonee, whimsicott, noibat, noivern}
+local cetoddle = {
+  name = "cetoddle",
+  poke_custom_prefix = "wowzas",
+  pos = {x = 9, y = 5},
+  config={extra = {h_size = 1}},
+  loc_vars = function(self, info_queue, center)
+    type_tooltip(self, info_queue, center)
+    info_queue[#info_queue+1] = G.P_CENTERS.m_glass
+    info_queue[#info_queue+1] = G.P_CENTERS.c_poke_icestone
+    return{vars = {center.ability.extra.h_size}}
+  end,
+  rarity = 1,
+  cost = 4,
+  item_req = "icestone",
+  stage = "Basic",
+  ptype = "Water",
+  atlas = "poke_wow9",
+  blueprint_compat = true,
+  calculate = function(self, card, context)
+    if context.first_hand_drawn and not context.blueprint then
+      local eval = function() return G.GAME.current_round.hands_played == 0 and not G.RESET_JIGGLES end
+      juice_card_until(card, eval, true)
+    end
+    if context.before and context.cardarea == G.jokers and not context.blueprint then
+      if G.GAME.current_round.hands_played == 0 then
+        local card = G.hand.cards[1]
+        card:set_ability(G.P_CENTERS.m_glass, nil, true)
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                card:juice_up()
+                return true
+            end
+        })) 
+      end
+    end
+  end,
+  add_to_deck = function(self, card, from_debuff)
+    G.hand:change_size(card.ability.extra.h_size)
+  end,
+  remove_from_deck = function(self, card, from_debuff)
+    G.hand:change_size(-card.ability.extra.h_size)
+  end
+}
+
+local cetitan = {
+  name = "cetitan",
+  poke_custom_prefix = "wowzas",
+  pos = {x = 10, y = 5},
+  config={extra = {h_size = 2, chips = 20, odds = 10}},
+  loc_vars = function(self, info_queue, center)
+    type_tooltip(self, info_queue, center)
+    info_queue[#info_queue+1] = G.P_CENTERS.m_glass
+    return{vars = {center.ability.extra.h_size, center.ability.extra.chips, '' .. (G.GAME and G.GAME.probabilities.normal or 1)}}
+  end,
+  rarity = "poke_safari",
+  cost = 9,
+  stage = "One",
+  ptype = "Water",
+  atlas = "poke_wow9",
+  blueprint_compat = true,
+  calculate = function(self, card, context)
+    if context.individual and not context.end_of_round and context.cardarea == G.hand and SMODS.has_enhancement(context.other_card, "m_glass") then
+      if context.other_card.debuff then
+          return {
+              message = localize('k_debuffed'),
+              colour = G.C.RED,
+              card = card,
+          }
+      else
+          return {
+              chips = card.ability.extra.chips,
+              card = card
+          }
+      end
+    end
+    if context.before and context.cardarea == G.jokers and not context.blueprint then
+      local stall_for_effects = false
+      for _, v in ipairs(G.hand.cards) do
+        if v.config.center == G.P_CENTERS.c_base then
+          if pseudorandom('cetitan') < (G.GAME.probabilities.normal/#G.hand.cards) and not context.other_card.debuff then
+            stall_for_effects = true
+            v:set_ability(G.P_CENTERS.m_glass, nil, true)
+            G.E_MANAGER:add_event(Event({
+              func = function()
+                v:juice_up()
+                return true
+              end
+            }))
+          end
+        end
+      end
+      if stall_for_effects then
+        return {
+          message = localize('wow_ice_spinner_ex'),
+          colour = G.C.BLUE
+        }
+      end
+    end
+  end,
+  add_to_deck = function(self, card, from_debuff)
+    G.hand:change_size(card.ability.extra.h_size)
+  end,
+  remove_from_deck = function(self, card, from_debuff)
+    G.hand:change_size(-card.ability.extra.h_size)
+  end
+}
+
+list = {carvanha, sharpedo, mega_sharpedo, cottonee, whimsicott, noibat, noivern, cetoddle, cetitan}
 
 return {name = "WowzasWonder1", 
 list = list
