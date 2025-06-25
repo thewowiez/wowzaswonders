@@ -238,7 +238,7 @@ local noibat = {
         }
       end
     end
-    return level_evo(self, card, context, "j_poke_noivern")
+    return level_evo(self, card, context, "j_wowzas_noivern")
   end,
 }
 -- Noivern 715
