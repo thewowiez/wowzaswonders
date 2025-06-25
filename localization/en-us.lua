@@ -17,9 +17,8 @@ return {
                 name = 'Sharpedo',
                 text = {
                     "Every played {C:attention}Ace{} is destroyed",
-                    "and this joker gains",
-                    "{C:mult}+#2#{} Mult and {X:mult,C:white}X#4#{} Mult",
-                    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult and {X:mult,C:white}X#3#{C:inactive} Mult)"
+                    "and this joker gains {C:mult}+#2#{} Mult",
+                    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)"
                 }
             },
 
