@@ -364,27 +364,21 @@ local cetitan = {
           }
       end
     end
-    if context.before and context.cardarea == G.jokers and not context.blueprint then
-      local stall_for_effects = false
-      for _, v in ipairs(G.hand.cards) do
-        if v.config.center == G.P_CENTERS.c_base then
-          if pseudorandom('cetitan') < (G.GAME.probabilities.normal/#G.hand.cards) and not context.other_card.debuff then
-            stall_for_effects = true
-            v:set_ability(G.P_CENTERS.m_glass, nil, true)
-            G.E_MANAGER:add_event(Event({
-              func = function()
-                v:juice_up()
-                return true
-              end
-            }))
-          end
+    if context.individual and not context.end_of_round and context.cardarea == G.hand then
+      if (pseudorandom('cetitan')) < (G.GAME.probabilities.normal/#G.hand.cards) and not context.other_card.debuff then
+        if context.other_card.config.center == G.P_CENTERS.c_base then
+          context.other_card:set_ability(G.P_CENTERS.m_glass, nil, true)
+          G.E_MANAGER:add_event(Event({
+            func = function()
+              card:juice_up()
+              return true
+            end
+          }))
+          return{
+            message = localize("wow_ice_spinner_ex"),
+            card = card,
+          }
         end
-      end
-      if stall_for_effects then
-        return {
-          message = localize('wow_ice_spinner_ex'),
-          colour = G.C.BLUE
-        }
       end
     end
   end,
