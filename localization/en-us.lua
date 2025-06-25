@@ -88,7 +88,7 @@ return {
                     "{C:attention}Glass{} cards held in hand give {C:chips}+#2#{} Chips",
                     "Unenhanced cards held in hand have a",
                     "chance to become {C:attention}Glass{} based on hand size",
-                    "{C:inactive,s:0.8}(Larger hand size means lower odds){C:inactive,s:0.8}"
+                    "{C:inactive,s:0.8}(Larger hand size means higher odds){C:inactive,s:0.8}"
                 }
             },
 
