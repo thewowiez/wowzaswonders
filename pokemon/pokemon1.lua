@@ -324,6 +324,7 @@ local cetoddle = {
         })) 
       end
     end
+    return item_evo(self, card, context, "j_wowzas_cetitan")
   end,
   add_to_deck = function(self, card, from_debuff)
     G.hand:change_size(card.ability.extra.h_size)
