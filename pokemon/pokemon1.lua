@@ -168,7 +168,7 @@ local cottonee = {
       end
       ease_dollars(back_to_zero, true)
     end
-    return item_evo(self, card, context, "j_poke_whimsicott")
+    return item_evo(self, card, context, "j_wowzas_whimsicott")
   end,
 }
 -- Whimsicott 547
