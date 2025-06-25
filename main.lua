@@ -113,6 +113,7 @@ SMODS.Atlas({
 table.insert(pokermon.family, {"cottonee", "whimsicott"})
 table.insert(pokermon.family, {"carvanha", "sharpedo", "mega_sharpedo"})
 table.insert(pokermon.family, {"noibat", "noivern"})
+table.insert(pokermon.family, {"cetoddle", "cetitan"})
 
 wowzas_config = SMODS.current_mod.config
 mod_dir = ''..SMODS.current_mod.path
