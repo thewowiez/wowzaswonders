@@ -391,7 +391,60 @@ local cetitan = {
   end
 }
 
-list = {carvanha, sharpedo, mega_sharpedo, cottonee, whimsicott, noibat, noivern, cetoddle, cetitan}
+local stufful = {
+  name = "stufful",
+  poke_custom_prefix = "wowzas",
+  pos = {x = 1, y = 3},
+  config = {extra = {Xmult = 1.5, rounds = 4,}},
+  loc_vars = function(self, info_queue, center)
+    type_tooltip(self, info_queue, center)
+    return {vars = {center.ability.extra.Xmult, center.ability.extra.rounds}}
+  end,
+  rarity = 1,
+  cost = 4,
+  stage = "Basic",
+  ptype = "Fighting",
+  atlas = "poke_wow7",
+  blueprint_compat = true,
+  calculate = function(self, card, context)
+    if context.individual and context.cardarea == G.play and #context.full_hand == 1 and SMODS.has_enhancement(context.full_hand[1], "m_wild") then
+      return{
+        message = localize('wow_rampage_ex'),
+        Xmult_mod = card.ability.extra.Xmult,
+        card = card
+      }
+    end
+    return level_evo(self, card, context, "j_wowzas_bewear")
+  end,
+}
+
+local bewear = {
+  name = "bewear",
+  poke_custom_prefix = "wowzas",
+  pos = {x = 2, y = 3},
+  config = {extra = {Xmult = 3}},
+  loc_vars = function(self, info_queue, center)
+    type_tooltip(self, info_queue, center)
+    return {vars = {center.ability.extra.Xmult, center.ability.extra.rounds}}
+  end,
+  rarity = 2,
+  cost = 7,
+  stage = "One",
+  ptype = "Fighting",
+  atlas = "poke_wow7",
+  blueprint_compat = true,
+  calculate = function(self, card, context)
+    if context.individual and context.cardarea == G.play and #context.full_hand == 1 and SMODS.has_enhancement(context.full_hand[1], "m_wild") then
+      return{
+        message = localize('wow_rampage_ex'),
+        Xmult_mod = card.ability.extra.Xmult,
+        card = card
+      }
+    end
+  end
+}
+
+list = {carvanha, sharpedo, mega_sharpedo, cottonee, whimsicott, noibat, noivern, cetoddle, cetitan, stufful, bewear}
 
 return {name = "WowzasWonder1", 
 list = list
