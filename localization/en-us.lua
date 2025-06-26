@@ -41,6 +41,23 @@ return {
                     "{C:inactive,s:0.8}(Evolves with a {C:attention,s:0.8}Sun Stone{C:inactive,s:0.8})",
                 }
             },
+            
+            j_wowzas_stufful = {
+                name = 'Stufful',
+                text = {
+                    "If played hand is a single {C:attention}Wild Card{}",
+                    "it gives {X:mult,C:white}X#1#{} Mult when scored",
+                    "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
+                }
+            },
+
+            j_wowzas_bewear = {
+                name = 'Bewear',
+                text = {
+                    "If played hand is a single {C:attention}Wild Card{}",
+                    "it gives {X:mult,C:white}X#1#{} Mult when scored",
+                }
+            },
 
             j_wowzas_whimsicott = {
                 name = "Whimsicott",
