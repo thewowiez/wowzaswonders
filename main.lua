@@ -69,6 +69,20 @@ SMODS.Atlas({
 }):register()
 
 SMODS.Atlas({
+  key = "poke_wow7",
+  path = "poke_wow7.png",
+  px = 71,
+  py = 95
+}):register()
+
+SMODS.Atlas({
+  key = "poke_shiny7",
+  path = "poke_shiny7.png",
+  px = 71,
+  py = 95
+}):register()
+
+SMODS.Atlas({
   key = "poke_wow8",
   path = "poke_wow8.png",
   px = 71,
