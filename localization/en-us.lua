@@ -120,6 +120,7 @@ return {
                 wow_crunch_ex = "Crunch!",
                 wow_tailwind_ex = "Tailwind!",
                 wow_ice_spinner_ex = "Ice Spinner!",
+                wow_rampage_ex = "Rampage!",
             },
 
 
