@@ -158,16 +158,6 @@ local cottonee = {
         card = card
       }
     end
-    if context.setting_blind then
-      card:juice_up()
-      local back_to_zero = 0
-      if (SMODS.Mods["Talisman"] or {}).can_load then
-        back_to_zero = to_number(-G.GAME.dollars)
-      else
-        back_to_zero = -G.GAME.dollars
-      end
-      ease_dollars(back_to_zero, true)
-    end
     return item_evo(self, card, context, "j_wowzas_whimsicott")
   end,
 }
@@ -204,6 +194,107 @@ local whimsicott = {
     end
   end,
 }
+
+local fletchling = {
+  name = 'fletchling',
+  poke_custom_prefix = "wowzas",
+  pos = {x = 11, y = 0},
+  config = {extra = {mult = 2, mult2 = 1, rounds = 4}},
+  loc_vars = function(self, info_queue, center)
+    type_tooltip(self, info_queue, center)
+    return{vars = {center.ability.extra.mult, center.ability.extra.mult2, center.ability.extra.rounds}}
+  end,
+  rarity = 1,
+  cost = 4,
+  stage = "Basic",
+  ptype = "Colorless",
+  atlas = "poke_wow6",
+  blueprint_compat = true,
+  calculate = function(self, card, context)
+    if context.individual and not context.end_of_round and context.cardarea == G.play then
+      if G.GAME.current_round.hands_played == 0 then
+        return{
+          message = localize('wow_gale_wings_ex'),
+          mult_mod = card.ability.extra.mult,
+          card = card
+        }
+      elseif G.GAME.current_round.hands_played >= 1 then
+        return{
+          message = localize('wow_peck'),
+          mult_mod = card.ability.extra.mult2,
+          card = card
+        }
+      end
+    end
+    return level_evo(self, card, context, "j_wowzas_fletchinder")
+  end,
+}
+
+local fletchinder = {
+  name = 'fletchinder',
+  poke_custom_prefix = "wowzas",
+  pos = {x = 12, y = 0},
+  config = {extra = {mult = 4, mult2 = 2, rounds = 4}},
+  loc_vars = function(self, info_queue, center)
+    type_tooltip(self, info_queue, center)
+    return{vars = {center.ability.extra.mult, center.ability.extra.mult2, center.ability.extra.rounds}}
+  end,
+  rarity = 2,
+  cost = 6,
+  stage = "One",
+  ptype = "Fire",
+  atlas = "poke_wow6",
+  blueprint_compat = true,
+  calculate = function(self, card, context)
+    if context.individual and not context.end_of_round and context.cardarea == G.play then
+      if G.GAME.current_round.hands_played == 0 then
+        return{
+          message = localize('wow_gale_wings_ex'),
+          mult_mod = card.ability.extra.mult,
+          card = card
+        }
+      elseif G.GAME.current_round.hands_played >= 1 then
+        return{
+          message = localize('wow_peck'),
+          mult_mod = card.ability.extra.mult2,
+          card = card
+        }
+      end
+    end
+    return level_evo(self, card, context, "j_wowzas_talonflame")
+  end,
+}
+
+local talonflame={
+  name = "talonflame",
+  poke_custom_prefix = "wowzas",
+  pos = {x = 13, y = 0},
+  config = {extra = {mult_mod = 1}},
+  loc_vars = function(self, info_queue, center)
+    type_tooltip(self, info_queue, center)
+    return {vars = {center.ability.extra.mult_mod}}
+  end,
+  rarity = "poke_safari",
+  cost = 10,
+  stage = "Two",
+  ptype = "Fire",
+  atlas = "poke_wow6",
+  perishable_compat = true,
+  blueprint_compat = true,
+  eternal_compat = true,
+  calculate = function(self, card, context)
+    if context.individual and context.cardarea == G.play and context.scoring_hand and G.GAME.current_round.hands_played == 0 then
+      context.other_card.ability.perma_mult = context.other_card.ability.perma_mult or 0
+      context.other_card.ability.perma_mult = context.other_card.ability.perma_mult + card.ability.extra.mult_mod
+      return {
+        extra = {message = localize('wow_gale_wings_ex'), colour = G.C.MULT},
+        colour = G.C.MULT,
+        card = card
+      }
+    end
+  end,
+}
+
 -- Noibat 714
 local noibat = {
   name = "noibat",
@@ -444,7 +535,7 @@ local bewear = {
   end
 }
 
-list = {carvanha, sharpedo, mega_sharpedo, cottonee, whimsicott, noibat, noivern, cetoddle, cetitan, stufful, bewear}
+list = {carvanha, sharpedo, mega_sharpedo, cottonee, whimsicott, fletchling, fletchinder, talonflame noibat, noivern, cetoddle, cetitan, stufful, bewear}
 
 return {name = "WowzasWonder1", 
 list = list
