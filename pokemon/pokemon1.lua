@@ -269,7 +269,7 @@ local talonflame={
   name = "talonflame",
   poke_custom_prefix = "wowzas",
   pos = {x = 13, y = 0},
-  config = {extra = {mult_mod = 1}},
+  config = {extra = {mult_mod = 2}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.mult_mod}}
