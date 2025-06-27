@@ -64,7 +64,7 @@ return {
                     "each scored card gives {C:mult}+#1#{} Mult",
                     "{br:3}ERROR - CONTACT STEAK",
                     "Each scored card after {C:attention}first hand{} gives {C:mult}+#2#{} Mult",
-                    "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
+                    "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8} rounds)",
                 }
             },
 
@@ -75,7 +75,7 @@ return {
                     "each scored card gives {C:mult}+#1#{} Mult",
                     "{br:3}ERROR - CONTACT STEAK",
                     "Each scored card after {C:attention}first hand{} gives {C:mult}+#2#{} Mult",
-                    "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
+                    "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8} rounds)",
                 }
             },
 
