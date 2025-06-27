@@ -269,7 +269,7 @@ local talonflame={
   name = "talonflame",
   poke_custom_prefix = "wowzas",
   pos = {x = 13, y = 0},
-  config = {extra = {mult_mod = 2}},
+  config = {extra = {mult_mod = 2, d_size = 1}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
     return {vars = {center.ability.extra.mult_mod}}
@@ -293,6 +293,14 @@ local talonflame={
       }
     end
   end,
+  add_to_deck = function(self, card, from_debuff)
+    G.GAME.round_resets.discards = G.GAME.round_resets.discards + card.ability.extra.d_size
+    ease_discard(card.ability.extra.d_size)
+  end,
+  remove_from_deck = function(self, card, from_debuff)
+    G.GAME.round_resets.discards = G.GAME.round_resets.discards - card.ability.extra.d_size
+    ease_discard(-card.ability.extra.d_size)
+  end
 }
 
 -- Noibat 714
