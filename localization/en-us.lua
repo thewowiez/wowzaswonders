@@ -36,26 +36,7 @@ return {
                 name = "Cottonee",
                 text = {
                     "Each card scored gives {C:money}$#2#{}",
-                    "When blind is selected",
-                    "sets money to {C:money}$0",
                     "{C:inactive,s:0.8}(Evolves with a {C:attention,s:0.8}Sun Stone{C:inactive,s:0.8})",
-                }
-            },
-            
-            j_wowzas_stufful = {
-                name = 'Stufful',
-                text = {
-                    "If played hand is a single {C:attention}Wild Card{}",
-                    "it gives {X:mult,C:white}X#1#{} Mult when scored",
-                    "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
-                }
-            },
-
-            j_wowzas_bewear = {
-                name = 'Bewear',
-                text = {
-                    "If played hand is a single {C:attention}Wild Card{}",
-                    "it gives {X:mult,C:white}X#1#{} Mult when scored",
                 }
             },
 
@@ -76,6 +57,34 @@ return {
                 }
             },
 
+            j_wowzas_fletchling  = {
+                name = "Fletchling",
+                text = {
+                    "If {C:attention}first hand{} of round",
+                    "each scored card gives {C:mult}+#1#{} Mult",
+                    "{br:3}ERROR - CONTACT STEAK",
+                    "Each scored card after {C:attention}first hand{} gives {C:mult}+#2#{} Mult",
+                }
+            },
+
+            j_wowzas_fletchinder  = {
+                name = "Fletchinder",
+                text = {
+                    "If {C:attention}first hand{} of round",
+                    "each scored card gives {C:mult}+#1#{} Mult",
+                    "{br:3}ERROR - CONTACT STEAK",
+                    "Each scored card after {C:attention}first hand{} gives {C:mult}+#2#{} Mult",
+                }
+            },
+
+            j_wowzas_talonflame = {
+                name = "Talonflame",
+                text = {
+                    "If {C:attention}first hand{} of round",
+                    "each scored card gains {C:mult}+#1#{} Mult",
+                }
+            },
+
             j_wowzas_noivern = {
                 name = 'Noivern',
                 text = {
@@ -84,6 +93,23 @@ return {
                     "{br:3}ERROR - CONTACT STEAK",
                     "Each {C:attention}2{} retriggers {C:attention}2{} times and",
                     "gives {C:chips}+#3#{} Chips when scored",
+                }
+            },
+
+            j_wowzas_stufful = {
+                name = 'Stufful',
+                text = {
+                    "If played hand is a single {C:attention}Wild Card{}",
+                    "it gives {X:mult,C:white}X#1#{} Mult when scored",
+                    "{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
+                }
+            },
+
+            j_wowzas_bewear = {
+                name = 'Bewear',
+                text = {
+                    "If played hand is a single {C:attention}Wild Card{}",
+                    "it gives {X:mult,C:white}X#1#{} Mult when scored",
                 }
             },
 
