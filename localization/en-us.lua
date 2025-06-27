@@ -82,6 +82,7 @@ return {
             j_wowzas_talonflame = {
                 name = "Talonflame",
                 text = {
+                    "{C:red}+#2#{} discard",
                     "If {C:attention}first hand{} of round",
                     "each scored card gains {C:mult}+#1#{} Mult",
                 }
