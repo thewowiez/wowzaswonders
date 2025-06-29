@@ -167,7 +167,7 @@ return {
             j_wowzas_mega_latias = {
                 name = "Mega Latias",
                 text = {
-                    "Adds {C:mult}+#1#{} Chips to hands when",
+                    "Adds {C:chips}+#1#{} Chips to hands when",
                     "hands is upgraded",
                     "{br:3}ERROR - CONTACT STEAK",
                     "Balances chips and mult for played hand",
