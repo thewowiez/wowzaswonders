@@ -137,6 +137,42 @@ return {
                     "{C:inactive,s:0.8}(Larger hand size means higher odds){C:inactive,s:0.8}"
                 }
             },
+            
+            j_wowzas_latios = {
+                name = 'Latios',
+                text = {
+                    "Adds {C:mult}+#1#{} Mult to hands when",
+                    "hand is upgraded",
+                }
+            },
+
+            j_wowzas_latias = {
+                name = 'Latias',
+                text = {
+                    "Adds {C:chips}+#1#{} Chips to hands when",
+                    "hand is upgraded",
+                }
+            },
+
+            j_wowzas_mega_latios = {
+                name = "Mega Latios",
+                text = {
+                    "Adds {C:mult}+#1#{} Mult to hands when",
+                    "hands is upgraded",
+                    "{br:3}ERROR - CONTACT STEAK",
+                    "Balances chips and mult for played hand",
+                }
+            },
+
+            j_wowzas_mega_latias = {
+                name = "Mega Latias",
+                text = {
+                    "Adds {C:mult}+#1#{} Chips to hands when",
+                    "hands is upgraded",
+                    "{br:3}ERROR - CONTACT STEAK",
+                    "Balances chips and mult for played hand",
+                }
+            },
 
             
 
@@ -152,6 +188,8 @@ return {
                 wow_rampage_ex = "Rampage!",
                 wow_gale_wings_ex = "Gale Wings!",
                 wow_peck = "Peck",
+                wow_luster_purge_ex = "Luster Purge!",
+                wow_mist_ball_ex = "Mist Ball!",
             },
 
 
