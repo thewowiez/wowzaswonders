@@ -13,9 +13,9 @@ pattern = '''
 position = "before"
 payload = '''
 if next(SMODS.find_card('j_wowzas_latios')) and amount > 0 then
-G.GAME.hands[hand].s_mult = G.GAME.hands[hand].mult + SMODS.find_card('j_wowzas_latios')[1].ability.extra.mult_mod*amount
+G.GAME.hands[hand].s_mult = SMODS.find_card('j_wowzas_latios')[1].ability.extra.mult_mod*amount
 elseif next(SMODS.find_card('j_wowzas_mega_latios')) and amount > 0 then
-G.GAME.hands[hand].s_mult = G.GAME.hands[hand].mult + SMODS.find_card('j_wowzas_mega_latios')[1].ability.extra.mult_mod*amount
+G.GAME.hands[hand].s_mult = SMODS.find_card('j_wowzas_mega_latios')[1].ability.extra.mult_mod*amount
 end
 '''
 match_indent = true
@@ -30,9 +30,9 @@ pattern = '''
 position = "before"
 payload = '''
 if next(SMODS.find_card('j_wowzas_latias')) and amount > 0 then
-G.GAME.hands[hand].chips = G.GAME.hands[hand].chips + SMODS.find_card('j_wowzas_latias')[1].ability.extra.chips*amount 
+G.GAME.hands[hand].s_chips = SMODS.find_card('j_wowzas_latias')[1].ability.extra.chips*amount 
 elseif next(SMODS.find_card('j_wowzas_mega_latias')) and amount > 0 then
-G.GAME.hands[hand].chips = G.GAME.hands[hand].chips + SMODS.find_card('j_wowzas_mega_latias')[1].ability.extra.chips*amount
+G.GAME.hands[hand].s_chips = SMODS.find_card('j_wowzas_mega_latias')[1].ability.extra.chips*amount
 end
 '''
 match_indent = true
