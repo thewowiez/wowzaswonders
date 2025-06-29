@@ -551,6 +551,7 @@ local latios = {
   config = {extra  = {mult_mod = 8}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
+    info_queue[#info_queue+1] = {key = 'blue_seal', set = 'Other'}
     return{vars = {center.ability.extra.mult_mod}}
   end,
   rarity = 4,
@@ -560,6 +561,10 @@ local latios = {
   atlas = "poke_wow3",
   blueprint_compat = false,
   calculate = function(self, card, context)
+    if context.before and context.cardarea == G.jokers and context.scoring_hand then
+      local card = context.scoring_hand[1]
+      card:set_seal('Blue', true)
+    end
   end,
   megas = {"mega_latios"}
 }
@@ -572,6 +577,7 @@ local latias = {
   config = {extra  = {chips = 35}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
+    info_queue[#info_queue+1] = {key = 'blue_seal', set = 'Other'}
     return{vars = {center.ability.extra.chips}}
   end,
   rarity = 4,
@@ -581,6 +587,10 @@ local latias = {
   atlas = "poke_wow3",
   blueprint_compat = false,
   calculate = function(self, card, context)
+    if context.before and context.cardarea == G.jokers and context.scoring_hand then
+      local card = context.scoring_hand[1]
+      card:set_seal('Blue', true)
+    end
   end,
   megas = {"mega_latias"}
 }
@@ -593,6 +603,7 @@ local mega_latios = {
   config = {extra  = {mult_mod = 10}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
+    info_queue[#info_queue+1] = {key = 'blue_seal', set = 'Other'}
     return{vars = {center.ability.extra.mult_mod}}
   end,
   rarity = "poke_mega",
@@ -616,9 +627,10 @@ local mega_latias = {
   poke_custom_prefix = "wowzas",
   pos = {x = 1, y = 5},
   soul_pos = {x = 2, y = 5},
-  config = {extra  = {chips = 60}},
+  config = {extra  = {chips = 60,}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
+    info_queue[#info_queue+1] = {key = 'blue_seal', set = 'Other'}
     return{vars = {center.ability.extra.chips}}
   end,
   rarity = "poke_mega",
