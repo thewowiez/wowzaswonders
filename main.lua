@@ -130,8 +130,8 @@ table.insert(pokermon.family, {"noibat", "noivern"})
 table.insert(pokermon.family, {"cetoddle", "cetitan"})
 table.insert(pokermon.family, {"stufful", "bewear"})
 table.insert(pokermon.family, {"fletchling", "fletchinder", "talonflame"})
-table.insert(pokermon.family, {"latios, mega_latios"})
-table.insert(pokermon.family, {"latias, mega_latias"})
+table.insert(pokermon.family, {"latios", "mega_latios"})
+table.insert(pokermon.family, {"latias", "mega_latias"})
 
 wowzas_config = SMODS.current_mod.config
 mod_dir = ''..SMODS.current_mod.path
