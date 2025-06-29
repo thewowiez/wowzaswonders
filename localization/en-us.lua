@@ -143,6 +143,9 @@ return {
                 text = {
                     "Adds {C:mult}+#1#{} Mult to hands when",
                     "hand is upgraded",
+                    "{br:3}ERROR - CONTACT STEAK",
+                    "First card in scoring hand receives",
+                    "a {C:blue}Blue Seal{}",
                 }
             },
 
@@ -151,6 +154,9 @@ return {
                 text = {
                     "Adds {C:chips}+#1#{} Chips to hands when",
                     "hand is upgraded",
+                    "{br:3}ERROR - CONTACT STEAK",
+                    "First card in scoring hand receives",
+                    "a {C:blue}Blue Seal{}",
                 }
             },
 
@@ -167,7 +173,7 @@ return {
             j_wowzas_mega_latias = {
                 name = "Mega Latias",
                 text = {
-                    "Adds {C:chips}+#1#{} Chips to hands when",
+                    "Adds {C:mult}+#1#{} Chips to hands when",
                     "hands is upgraded",
                     "{br:3}ERROR - CONTACT STEAK",
                     "Balances chips and mult for played hand",
