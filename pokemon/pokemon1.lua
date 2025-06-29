@@ -543,7 +543,101 @@ local bewear = {
   end
 }
 
-list = {carvanha, sharpedo, mega_sharpedo, cottonee, whimsicott, fletchling, fletchinder, talonflame noibat, noivern, cetoddle, cetitan, stufful, bewear}
+local latios = {
+  name = "latios",
+  poke_custom_prefix = "wowzas",
+  pos = {x = 6, y = 13},
+  soul_pos = {x = 7, y = 13},
+  config = {extra  = {mult_mod = 8}},
+  loc_vars = function(self, info_queue, center)
+    type_tooltip(self, info_queue, center)
+    return{vars = {center.ability.extra.mult_mod}}
+  end,
+  rarity = 4,
+  cost = 20,
+  stage = "Legendary",
+  ptype = "Psychic",
+  atlas = "poke_wow3",
+  blueprint_compat = false,
+  calculate = function(self, card, context)
+  end,
+  megas = {"mega_latios"}
+}
+
+local latias = {
+  name = "latias",
+  poke_custom_prefix = "wowzas",
+  pos = {x = 4, y = 13},
+  soul_pos = {x = 5, y = 13},
+  config = {extra  = {chips = 35}},
+  loc_vars = function(self, info_queue, center)
+    type_tooltip(self, info_queue, center)
+    return{vars = {center.ability.extra.chips}}
+  end,
+  rarity = 4,
+  cost = 20,
+  stage = "Legendary",
+  ptype = "Psychic",
+  atlas = "poke_wow3",
+  blueprint_compat = false,
+  calculate = function(self, card, context)
+  end,
+  megas = {"mega_latias"}
+}
+
+local mega_latios = {
+  name = "mega_latios",
+  poke_custom_prefix = "wowzas",
+  pos = {x = 3, y = 5},
+  soul_pos = {x = 4, y = 5},
+  config = {extra  = {mult_mod = 10}},
+  loc_vars = function(self, info_queue, center)
+    type_tooltip(self, info_queue, center)
+    return{vars = {center.ability.extra.mult_mod}}
+  end,
+  rarity = "poke_mega",
+  cost = 20,
+  stage = "Mega",
+  ptype = "Psychic",
+  atlas = "poke_wowmega",
+  blueprint_compat = false,
+  calculate = function(self, card, context)
+    if context.final_scoring_step then
+      return {
+        message = localize('wow_luster_purge_ex'),
+        balance = true
+      }
+    end
+  end,
+}
+
+local mega_latias = {
+  name = "mega_latias",
+  poke_custom_prefix = "wowzas",
+  pos = {x = 1, y = 5},
+  soul_pos = {x = 2, y = 5},
+  config = {extra  = {chips = 60}},
+  loc_vars = function(self, info_queue, center)
+    type_tooltip(self, info_queue, center)
+    return{vars = {center.ability.extra.chips}}
+  end,
+  rarity = "poke_mega",
+  cost = 20,
+  stage = "Legendary",
+  ptype = "Psychic",
+  atlas = "poke_wowmega",
+  blueprint_compat = false,
+  calculate = function(self, card, context)
+    if context.final_scoring_step then
+      return {
+        message = localize('wow_mist_ball_ex'),
+        balance = true
+      }
+    end
+  end,
+}
+
+list = {carvanha, sharpedo, mega_sharpedo, cottonee, whimsicott, fletchling, fletchinder, talonflame, noibat, noivern, cetoddle, cetitan, stufful, bewear, latios, latias, mega_latios, mega_latias}
 
 return {name = "WowzasWonder1", 
 list = list
