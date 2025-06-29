@@ -272,7 +272,7 @@ local talonflame={
   config = {extra = {mult_mod = 2, d_size = 1}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
-    return {vars = {center.ability.extra.mult_mod}}
+    return {vars = {center.ability.extra.mult_mod, center.ability.extra.d_size}}
   end,
   rarity = "poke_safari",
   cost = 10,
