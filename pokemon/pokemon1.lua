@@ -603,7 +603,6 @@ local mega_latios = {
   config = {extra  = {mult_mod = 10}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
-    info_queue[#info_queue+1] = {key = 'blue_seal', set = 'Other'}
     return{vars = {center.ability.extra.mult_mod}}
   end,
   rarity = "poke_mega",
@@ -630,7 +629,6 @@ local mega_latias = {
   config = {extra  = {chips = 60,}},
   loc_vars = function(self, info_queue, center)
     type_tooltip(self, info_queue, center)
-    info_queue[#info_queue+1] = {key = 'blue_seal', set = 'Other'}
     return{vars = {center.ability.extra.chips}}
   end,
   rarity = "poke_mega",
